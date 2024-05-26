@@ -19,7 +19,35 @@ HappeningTN is a local event listing platform designed to connect people in Tuni
 To get started with HappeningTN, clone the repository and follow these steps:
 1. Navigate to the `backend` directory and install dependencies:
 
-```bash
 cd backend npm install
 
 
+2. Start the backend server:
+
+```bash
+npm start
+```
+
+3. Navigate to the `frontend` directory and install dependencies:
+```bash
+cd …/frontend npm install
+```
+
+4. Start the frontend development server:
+```bash
+npm start
+```
+
+
+## Contributing
+We welcome contributions to HappeningTN! If you have suggestions or want to contribute code, please feel free to make a pull request or open an issue.
+
+## License
+HappeningTN is open source and available under the MIT License.
+
+## Contact
+For any queries or feedback, please reach out to [sassihamdi777@gmail.com].
+
+## Acknowledgments
+A special thanks to everyone who has contributed to making HappeningTN a reality.
+ 
