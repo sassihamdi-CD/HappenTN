@@ -15,11 +15,6 @@ HappeningTN is a local event listing platform designed to connect people in Tuni
 - **Event Management**: Event organizers can create and manage their event listings.
 - **Interactive Map**: View events plotted on a map for easy location-based browsing.
 
-## Technology Stack
-- **Frontend**: HTML, CSS, JavaScript (React.js/Vue.js)
-- **Backend**: Node.js/Express.js or Python/Django
-- **Database**: MongoDB/PostgreSQL
-- **Hosting**: Heroku/Netlify
 
 ## Getting Started
 To get started with HappeningTN, clone the repository and follow these steps:
@@ -43,6 +38,7 @@ cd …/frontend npm install
 ```bash
 npm start
 ```
+### Technology Stack
 
 ### Monorepo tech-stack
 
@@ -93,7 +89,6 @@ The front-end is built in TypeScript.
 | KEY | DEFAULT | DESCRIPTION |
 | :---| :------ | :---------- |
 | WEB_PORT | 8099 | Application port |
-| :------- | :--- | :--------------- |
 | NEXT_PUBLIC_API_BASE_URL | http://localhost:3099 | Server url |
 
 ## App
@@ -146,7 +141,7 @@ export namespace TweetApi {
   ...
 ```
 So if I wanted to fetch all the tweets in my app I would simply do:
-```Typesricpt
+```Typescript
 import { Api, Model } from '@web/domain'
 
 const tweets = await Api.Tweet.findMany()
