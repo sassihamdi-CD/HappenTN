@@ -1,6 +1,6 @@
 # HappeningTN
 
-![Logo](logo.jpeg)
+![Logo](/readme_images/logo.jpeg)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
@@ -167,7 +167,7 @@ const tweets = await Api.Tweet.findMany()
 
 ## Modules 
 
-![App Screenshot](call-stack.png)
+![App Screenshot](/readme_images/call-stack.png)
 
 i
 You will spend most of your time in the modules folder. That's where you have all your endpoints, the queries to the database and the business logic.
@@ -177,9 +177,9 @@ A module usually represents a database entity. But sometimes, you might make a m
 
 ## Database
 
-![postgresql](postgresql-logo.png) 
+![postgresql](/readme_images/postgresql-logo.png) 
 
-![typeorm]( typeorm-logo.png)
+![typeorm]( /readme_images/typeorm-logo.png)
 
 The API communicates with a PostgreSQL database using TypeORM.
 
