@@ -181,7 +181,9 @@ A module usually represents a database entity. But sometimes, you might make a m
 
 ##Database
 
+i
 ![postgresql](ostgresql-logo.png) 
+i
 
 ![typeorm]( typeorm-logo.png)
 
