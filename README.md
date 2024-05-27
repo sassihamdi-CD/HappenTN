@@ -185,6 +185,78 @@ A module usually represents a database entity. But sometimes, you might make a m
 
 ![typeorm]( typeorm-logo.png)
 
+The API communicates with a PostgreSQL database using TypeORM.
+
+i highly recommend consulting the NestJS TypeORM documentation for a comprehensive understanding of its functionality.
+
+## Configuration
+
+All database-related code resides in the `src/core/database` folder.
+
+## Migrations
+
+In the development environment, the database schema is automatically synchronized, requiring no manual intervention. However, for other environments, SQL migrations need to be generated and executed.
+
+Update your `.env` file with your production url.
+```bash
+SERVER_DATABASE_URL=your-production-url
+```
+
+Generate migration files
+```bash
+pnpm run --filter server database:migration:build
+```
+
+Run migrations files on the target database
+
+```bash
+pnpm run --filter server database:migration:run
+```
+## Authentication
+
+### Email/password auth
+
+The registration and sign-in authentication process are managed in the api/src/modules/authentication.
+
+- This sign-in checks that:
+
+- the correct password has been provided
+
+If these conditions are met, an auth token is generated and returned to the client along with a user object.
+
+## Email vertification
+
+Email account verification is disabled by default.
+
+### Activate Email Verification
+
+To activate the email verification and automatically verify all new users, you can set the user status to CREATED instead of VERIFIED in `api/src/modules/user/domain/user.model.ts`
+```Typescript
+  @Column({ enum: UserStatus, default: UserStatus.CREATED })
+  status: UserStatus
+```
+After signing up, a user will be asked to verify their email using a time-sensitive code sent to their registered email address.
+
+Until verified, the JWT token issued to a user will contain an unverified flag, and access to protected API endpoints will be disabled.
+
+## Google auth
+To get your Google client id, follow the quick tutorial here. The callback URL is
+`https://yourapp.com/authentication/google`
+
+Once you have it, add it to your API .env:
+```bash
+GOOGLE_CLIENT_ID=your-client-id
+```
+And it to your Front-end .env:
+```bash
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=your-client-id
+```
+The Google sign-in button will automatically appear in the login when the .env variable is detected.
+
+## Create an API endpoint
+
+HappingTN already generates all the basic API endpoints you would need for each entity in database
+
 
 ## Contributing
 We welcome contributions to HappeningTN! If you have suggestions or want to contribute code, please feel free to make a pull request or open an issue.
