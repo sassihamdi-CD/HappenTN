@@ -44,6 +44,113 @@ cd …/frontend npm install
 npm start
 ```
 
+### Monorepo tech-stack
+
+a monorepo using pnpm with the front-end and the back-end of the app inside
+
+## Frontend
+
+apps/web
+
+**Typescript:** Language
+
+**NextJS:** React SSR framework
+
+**Ant Design:** Beautiful design system
+
+## Backend
+
+apps/server
+
+**Node.js:** Environment
+
+**Typescript:** Language
+
+**NestJS:** Node.js framework
+
+**TypeORM:** Database ORM
+
+**PostgreSQL:** Relational database
+
+
+### architecture
+
+The front-end is built using a beautiful design system called Ant Design. This includes a full library of pre-built components that can easily drop into the application, containing everything from card and tables to self-validating forms, modals and notification.
+
+The front-end is built in TypeScript.
+##File structure
+```bash
+/src
+  /app          → the pages of your app
+  /designSystem → the theme/style of your app
+  /layouts      → the topbar/leftbar present in all your pages
+  /domain       → the data models and calls to the API
+  /store        → the global state of your app
+```
+
+## Environment Variables
+
+| KEY | DEFAULT | DESCRIPTION |
+| :---| :------ | :---------- |
+| WEB_PORT | 8099 | Application port |
+| :------- | :--- | :--------------- |
+| NEXT_PUBLIC_API_BASE_URL | http://localhost:3099 | Server url |
+
+## App
+
+```bash
+/app
+  /(authenticated)
+    /home
+      page.tsx
+    /tweets
+      /[id]
+        page.tsx
+    /profile
+      page.tsx
+  /(non-authenticated)
+    /login
+      page.tsx
+    /register
+      page.tsx
+```
+
+## Design System
+
+HappingTN uses Ant Design as a design system library.
+
+## Domain
+
+That's where the data models and the API interactions with the back-end live.
+```bash
+/domain
+  /authentication
+  /user
+  /tweet
+    tweet.api.ts
+    tweet.model.ts
+```
+tweet.api.ts
+```Typescript
+export namespace TweetApi {
+
+  export function findMany(
+    queryOptions?: ApiHelper.QueryOptions<Tweet>
+  ): Promise<Tweet[]> {
+
+    const buildOptions = ApiHelper.buildQueryOptions(queryOptions)
+
+    return HttpService.get(`/v1/tweets${buildOptions}`)
+
+  }
+  ...
+```
+So if I wanted to fetch all the tweets in my app I would simply do:
+```Typesricpt
+import { Api, Model } from '@web/domain'
+
+const tweets = await Api.Tweet.findMany()
+```
 
 ## Contributing
 We welcome contributions to HappeningTN! If you have suggestions or want to contribute code, please feel free to make a pull request or open an issue.
