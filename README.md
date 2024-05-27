@@ -160,13 +160,9 @@ const tweets = await Api.Tweet.findMany()
 | KEY | DEFAULT | DESCRIPTION |
 | :-- | :------ | :---------- |
 | NODE_ENV | development | Environment |
-| :------- | :---------- | :---------- |
 | SERVER_PORT | 3099 | Server port |
-| :---------- | :--- | :---------- |
 | SERVER_DATABASE_URL |                 | Database url |
-| :------------------ |  :------------- | :----------- |
 | SERVER_AUTHENTICATION_SECRET |        | Server secret |
-| :--------------------------- | :----- | :------------ |
 | SERVER_CLIENT_BASE_URL |     | Client url | 
 
 ## Modules 
