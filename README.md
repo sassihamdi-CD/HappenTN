@@ -179,7 +179,7 @@ You will spend most of your time in the modules folder. That's where you have al
 A module usually represents a database entity. But sometimes, you might make a module for a service that's not tied to any entity, like handling Stripe webhooks.
 
 
-##Database
+## Database
 
 ![postgresql](postgresql-logo.png) 
 
