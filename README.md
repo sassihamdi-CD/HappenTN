@@ -147,6 +147,44 @@ import { Api, Model } from '@web/domain'
 const tweets = await Api.Tweet.findMany()
 ```
 
+## File structure
+```bash
+/src
+  /core       → database migration, CORS, cookie
+  /helpers    → generic utilities
+  /libraries  → external libraries like stripe, google auth, etc..
+  /modules    → endpoints/business logic divided by module
+```
+
+## Environment Variables
+| KEY | DEFAULT | DESCRIPTION |
+| :-- | :------ | :---------- |
+| NODE_ENV | development | Environment |
+| :------- | :---------- | :---------- |
+| SERVER_PORT | 3099 | Server port |
+| :---------- | :--- | :---------- |
+| SERVER_DATABASE_URL |                 | Database url |
+| :------------------ |  :------------- | :----------- |
+| SERVER_AUTHENTICATION_SECRET |        | Server secret |
+| :--------------------------- | :----- | :------------ |
+| SERVER_CLIENT_BASE_URL |     | Client url | 
+
+## Modules 
+
+![App Screenshot](call-stack.png)
+
+i
+You will spend most of your time in the modules folder. That's where you have all your endpoints, the queries to the database and the business logic.
+
+A module usually represents a database entity. But sometimes, you might make a module for a service that's not tied to any entity, like handling Stripe webhooks.
+
+
+##Database
+![postgresql](ostgresql-logo.png) 
+
+![typeorm]( typeorm-logo.png)
+
+
 ## Contributing
 We welcome contributions to HappeningTN! If you have suggestions or want to contribute code, please feel free to make a pull request or open an issue.
 
