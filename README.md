@@ -1,4 +1,4 @@
-# HappeningTN
+# HappenTN
 
 ![Logo](/readme_images/logo.jpeg)
 
@@ -7,7 +7,7 @@
 [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 ## About HappeningTN
-HappeningTN is a local event listing platform designed to connect people in Tunisia with the latest events, workshops, and cultural activities in their vicinity. Our mission is to foster community engagement and cultural exchange by making it easier for everyone to discover and participate in local events.
+HappenTN is a local event listing platform designed to connect people in Tunisia with the latest events, workshops, and cultural activities in their vicinity. Our mission is to foster community engagement and cultural exchange by making it easier for everyone to discover and participate in local events.
 
 ## Key Features
 - **Event Discovery**: Browse a wide range of events based on categories and interests.
@@ -17,7 +17,7 @@ HappeningTN is a local event listing platform designed to connect people in Tuni
 
 
 ## Getting Started
-To get started with HappeningTN, clone the repository and follow these steps:
+To get started with HappenTN, clone the repository and follow these steps:
 1. Navigate to the `backend` directory and install dependencies:
 ```bash
 cd backend npm install
